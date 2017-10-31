@@ -1,0 +1,152 @@
+.jodelRegion { 
+	outline: 1px dashed #ccc;
+	min-height: 25px;
+	position: relative;
+}
+
+/*.jodelText,
+.jodelTextarea {
+    outline: 1px dashed #27ae60;
+}
+
+.jodelText:hover,
+.jodelTextarea:hover,
+.mce-edit-focus {
+    outline: 1px solid #27ae60 !important;
+}
+
+.jodelText.has-changed,
+.jodelTextarea.has-changed {
+    outline: 1px dashed red !important;
+}*/
+
+.jodelTextarea, .jodelTextarea:hover, .mce-edit-focus {
+    outline: none !important;
+}
+
+
+
+
+.jodelcms {
+    font-size:14px;
+    font-weight:normal;
+    line-height: normal;
+    text-decoration:none;
+    font-family: 'Verdana', sans-serif;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.jodelcms-region{
+    outline: dashed 1px #009788;
+    min-height: 25px;
+}
+
+.jodelRegion .drop-helper{
+	padding:5px 10px;
+	font-family: Verdana;
+	font-size:16px;
+	color:#27ae60;
+	background:#c3f7d9;
+	border:solid 1px #2ecc71;
+	display:none;
+    text-align: center;
+}
+
+.jodelcms-element {
+    outline: dashed 1px #27ae60;
+    min-height: 25px;
+    min-width: 40px;
+	overflow: hidden;
+	position: relative;
+}
+.jodelcms-element.has-changed {
+    outline: 1px dashed #F44236 !important;
+}
+
+.jodelcms-element .jodelcms-content {
+    overflow: hidden;
+}
+
+.jodelcms-element:hover {
+    outline: solid 1px #27ae60;
+}
+
+.jodelcms-region-fixed{
+    outline: dashed 1px #3498db;
+}
+
+.jodelcms-region-fixed .jodelcms-element {
+    outline: dashed 1px #3498db;
+}
+
+.jodelcms-region-fixed .jodelcms-element:hover {
+    outline: solid 2px #3498db;
+    box-shadow: 0 0 20px #3498db;
+}
+
+.jodelcms-collection{
+    outline: dashed 1px #9b59b6;
+}
+
+.jodelcms-collection .jodelcms-element {
+    outline: dashed 1px #9b59b6;
+}
+
+.jodelcms-collection .jodelcms-element:hover {
+    outline: solid 2px #9b59b6;
+    box-shadow: 0 0 20px #9b59b6;
+}
+
+.jodelcms-element .inline-toolbar {
+	position: absolute;
+	right:0;
+	top:0;
+	display: none;
+}
+
+.jodelcms-element:hover .inline-toolbar,
+.jodelcms-element:focus .inline-toolbar{
+	display:block;
+}
+
+.jodelcms-element .inline-toolbar .button {
+	width: 24px;
+	min-width: 24px;
+	height: 24px;
+	min-height: 24px;
+	line-height: 24px;
+	text-align:center;
+	font-size:14px;
+	color:#FFF;
+	background: #009788;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	margin:0;
+	margin-left: 2px;
+	font-weight:normal;
+	box-shadow:none;
+	cursor:pointer;
+	z-index: 100;
+    float:left;
+	transition: background 0.3s;
+}
+
+.jodelcms-element .inline-toolbar .button:hover {
+	background: #00c5b2;
+}
+
+.jodelcms-element .inline-toolbar .b-move {
+	cursor:move;
+}
+
+.jodelcms-element .inline-toolbar .b-delete {
+	background:#F44236;
+}
+
+.jodelcms-element .inline-toolbar .b-delete:hover {
+	background: #9a2c24;
+}
+
+.cke_focus { outline: none !important; }

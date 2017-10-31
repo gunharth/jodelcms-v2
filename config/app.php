@@ -167,6 +167,9 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\SettingsServiceProvider::class,
+        App\Providers\ViewsServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
 
         /*
          * Application Service Providers...
