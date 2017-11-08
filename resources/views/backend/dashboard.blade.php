@@ -42,9 +42,18 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <style>
+      .fade-enter-active, .fade-leave-active {
+        transition: opacity 2s;
+      }
+      .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0
+      }
+
+    </style>
 </head>
 <body class="hold-transition skin-blue-light sidebar-mini">
-<div class="wrapper">
+<div id="app" class="wrapper">
 
 
 <!-- Header -->
@@ -69,6 +78,20 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <transition name="fade"><router-view></router-view></transition>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
       <div class="box">
             <div class="box-header">
@@ -133,6 +156,8 @@
   </div>
   <!-- /.content-wrapper -->
 
+
+
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- To the right -->
@@ -145,6 +170,7 @@
 
 </div>
 <!-- ./wrapper -->
+
 
 <!-- jQuery 3 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -162,6 +188,7 @@
 <!-- <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
 <!-- SlimScroll -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+<script src="/backend/js/app.js"></script>
 <!-- ChartJS -->
 <!-- <script src="bower_components/Chart.js/Chart.js"></script> -->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
