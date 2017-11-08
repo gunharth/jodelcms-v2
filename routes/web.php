@@ -82,6 +82,11 @@ Route::group(['middleware' => 'auth', 'prefix' => LaravelLocalization::setLocale
     /*
      * Admin Pages
      */
+
+    Route::get('backend', 'BackendController@index')->name('admin.dashboard');
+    Route::get('backend/projects', 'BackendController@projectsindex');
+
+
     Route::post('page', 'PagesController@store')->name('admin.page.store');
     Route::get('page/create', 'PagesController@create')->name('admin.page.create');
     Route::get('page/{slug}/edit', 'PagesController@edit')->name('editpage');

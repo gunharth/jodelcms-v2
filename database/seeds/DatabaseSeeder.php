@@ -35,6 +35,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(PostSeeder::class);
 
+        $this->call(CollectionSeeder::class);
+        $this->call(ProjectSeeder::class);
+
         //$this->call(MenuSeeder::class);
 
         //$this->call(RegionSeeder::class);
