@@ -15,9 +15,9 @@
 </template>
 
 <script>
-    import TextField from './TextField'
-    import InputField from './InputField'
-    import SelectField from './SelectField'
+    // import TextField from './TextField'
+    // import InputField from './InputField'
+    // import SelectField from './SelectField'
 
     export default {
         props: ['props','thead'],

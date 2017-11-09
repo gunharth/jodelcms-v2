@@ -17,7 +17,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <router-link tag="li" to="/jobs" exact>
-                        <a>Timealyzer</a>
+                        <a>Jobs</a>
                     </router-link>
                     <li><a href="#">Slider</a></li>
                 </ul>
