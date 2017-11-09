@@ -15,7 +15,7 @@ let mix = require('laravel-mix');
 //    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.js('resources/backend/js/app.js', 'public/backend/js')
-   // .sass('resources/backend/sass/app.scss', 'public/backend/css');
+   .sass('resources/backend/sass/app.scss', 'public/backend/css');
 
    mix.browserSync({
             proxy: 'jodelcmsv2.dev',

@@ -14379,7 +14379,8 @@ module.exports = Cancel;
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(15);
+__webpack_require__(15);
+module.exports = __webpack_require__(71);
 
 
 /***/ }),
@@ -45436,7 +45437,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             title: 'All Jobs',
             source: '/api',
             create: '/customer/create',
-            thead: [{ title: 'Job #', key: 'id', sort: true }, { title: 'Client', key: 'client', sort: true }, { title: 'Project', key: 'project', sort: true }, { title: 'Job Status', key: 'job_status', sort: true }, { title: 'Order Type', key: 'order_type', sort: true }, { title: 'Shipping Date', key: 'shipping_date', sort: true }, { title: 'Payment', key: 'payment', sort: true }, { title: 'Parts Status', key: 'parts_status', sort: true }, { title: 'Qty Items', key: 'qty_items', sort: true }, { title: 'notes', key: 'notes', sort: true }],
+            thead: [{ title: 'Job #', key: 'id', sort: true }, { title: 'Client', key: 'client', sort: true }],
             filter: ['id', 'client']
         };
     },
@@ -46119,9 +46120,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     },
     components: {
-        TextField: __WEBPACK_IMPORTED_MODULE_0__TextField___default.a,
-        InputField: __WEBPACK_IMPORTED_MODULE_1__InputField___default.a,
-        SelectField: __WEBPACK_IMPORTED_MODULE_2__SelectField___default.a
+        // TextField,
+        // InputField,
+        // SelectField
     }
 });
 
@@ -46525,17 +46526,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.props.item.client))]),
-    _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.props.item.order_type))]),
-    _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.props.item.shipping_date))]),
-    _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.props.item.payment))]),
-    _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.props.item.parts_status))]),
-    _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.props.item.qty_items))])
+    _c("td", [_vm._v(_vm._s(_vm.props.item.client))])
   ])
 }
 var staticRenderFns = []
@@ -47424,6 +47415,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-0761d784", module.exports)
   }
 }
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

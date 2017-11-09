@@ -5,11 +5,11 @@
 	    <!-- <td><input-field @saveChanges="delaySave" v-model="project" field-name="project"></input-field></td> -->
 	    <!-- <td><select-field @saveChanges="instantSave" v-model="job_status" field-name="job_status"></select-field></td> -->
         <td>{{props.item.client}}</td>
-	    <td>{{props.item.order_type}}</td>
+	    <!-- <td>{{props.item.order_type}}</td>
 	    <td>{{props.item.shipping_date}}</td>
 	    <td>{{props.item.payment}}</td>
 	    <td>{{props.item.parts_status}}</td>
-	    <td>{{props.item.qty_items}}</td>
+	    <td>{{props.item.qty_items}}</td> -->
 	    <!-- <td><text-field @saveChanges="delaySave" v-model="notes" field-name="notes"></text-field></td> -->
 	</tr>
 </template>
@@ -58,9 +58,9 @@
 
 		},
         components: {
-            TextField,
-            InputField,
-            SelectField
+            // TextField,
+            // InputField,
+            // SelectField
         }
     }
 </script>
