@@ -42,6 +42,21 @@ Route::group(['as' => 'direct', 'prefix' => LaravelLocalization::setLocale()], f
     Route::get('blog/{slug}', 'PostsController@show');
 
     /*
+     * Timeline
+     */
+    Route::get('timeline', function () {
+        $entries = \App\TimelineEntry::selectRaw('year(started_at) year, monthname(started_at) month, title')
+                ->orderBy('started_at', 'DESC')
+                ->get();
+    //return $entries;
+    // select year(started_at) year,
+    // monthname(started_at) month,
+    // title
+    // from entries ORDER BY started_at DESC
+        return view('timeline.index', compact('entries'));
+    });
+
+    /*
      * Test for renaming blog to articles
      * Guest view only
      */
@@ -56,16 +71,29 @@ Route::group(['as' => 'direct', 'prefix' => LaravelLocalization::setLocale()], f
  */
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('api', 'JobsController@index');
+
+
+    // Route::get('backend/projects', 'BackendController@projectsindex');
+
+    //Route::get('api', 'JobsController@index');
     Route::get('api/jobs', 'JobsController@index');
     Route::get('api/jobs/{id}/edit', 'JobsController@edit');
     Route::post('api/jobs/{id}', 'JobsController@update');
 
-    Route::get('api/items', 'ItemsController@index');
-    Route::get('api/products', 'ProductsController@index');
+    //Route::get('api', 'JobsController@index');
+    Route::get('api/timeline', 'TimelineEntryController@index');
+    Route::get('api/timeline/{id}/edit', 'TimelineEntryController@edit');
+    Route::post('api/timeline/{id}', 'TimelineEntryController@update');
+
+    // Route::get('api/items', 'ItemsController@index');
+    // Route::get('api/products', 'ProductsController@index');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => LaravelLocalization::setLocale().'/admin'], function () {
+
+    Route::get('backend/collections', 'BackendController@index')->name('admin.dashboard');
+    Route::get('backend', 'BackendController@index')->name('admin.dashboard');
+
 
     /*
      * Dev only reset Database
@@ -93,8 +121,7 @@ Route::group(['middleware' => 'auth', 'prefix' => LaravelLocalization::setLocale
      * Admin Pages
      */
 
-    Route::get('backend', 'BackendController@index')->name('admin.dashboard');
-    Route::get('backend/projects', 'BackendController@projectsindex');
+
 
 
     Route::post('page', 'PagesController@store')->name('admin.page.store');

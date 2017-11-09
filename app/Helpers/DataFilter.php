@@ -4,7 +4,7 @@ namespace App\Helpers;
 
 use Validator;
 
-trait JobDataFilter {
+trait DataFilter {
 
     protected $operators = [
         'equal_to' => '=',

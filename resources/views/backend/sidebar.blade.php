@@ -6,16 +6,19 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="active"><a href="{{ route('admin.dashboard') }}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+            <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
             <li class="header">CONTENT</li>
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Pages</span></a></li>
-            <li class="treeview">
+            <li><a href="#"><i class="fa fa-link"></i> <span>Pages</span></a></li>
+            <li class="treeview {{ Request::segment(5) === 'collections' ? 'active' : null }}">
                 <a href="#"><i class="fa fa-link"></i> <span>Collections</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    <router-link tag="li" to="/collections/timeline">
+                        <a>Timeline</a>
+                    </router-link>
                     <router-link tag="li" to="/jobs" exact>
                         <a>Jobs</a>
                     </router-link>

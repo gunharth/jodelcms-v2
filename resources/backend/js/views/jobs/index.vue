@@ -14,7 +14,7 @@
         data() {
             return {
                 title: 'All Jobs',
-                source: '/api',
+                source: '/api/jobs',
                 create: '/customer/create',
                 thead: [
                     {title: 'Job #', key: 'id', sort: true},

@@ -47,6 +47,7 @@
         body {
             font-size: 15px;
             background: #f7f7f7;
+            color: #32325d;
         }
 
         .content-wrapper {
@@ -54,15 +55,34 @@
         }
 
         .fade-enter-active, .fade-leave-active {
-            transition: opacity 2s;
+            transition: opacity 0.5s;
         }
         .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
             opacity: 0
         }
         .router-link-active { font-weight: bold; }
+
+        .sidebar-menu>li.menu-open span {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="hold-transition skin-blue-light sidebar-mini">
+<input type="hidden" id="hash">
+<script>
+
+        // let hash;
+
+        // function getHash() {
+        //     hashtag = window.location.hash;
+        //     hashtag = hashtag.replace('#','');
+        //     //hashtag = hashtag.replace('all','');
+        //     return hashtag;
+        // }
+        // hash = getHash();
+        // let el = document.getElementById('hash');
+        // el.value = hash;
+    </script>
 <div id="app" class="wrapper">
 
 
@@ -74,19 +94,11 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                Page Header
-                <small>Optional description</small>
-            </h1>
-        </section>
-
         <!-- Main content -->
         <section class="content container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <transition name="fade">
+                        <transition name="fade" mode="out-in">
                                 <router-view></router-view>
                         </transition>
                     </div>
