@@ -9,13 +9,11 @@
             <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
             <li class="header">CONTENT</li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Pages</span></a></li>
-            <li class="treeview {{ Request::segment(5) === 'collections' ? 'active' : null }}">
-                <a href="#"><i class="fa fa-link"></i> <span>Collections</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
+            <li class="treemenu">
+                <router-link to="/collections">
+                    <i class="fa fa-link"></i> <span>Collections</span>
+                </router-link>
+                <ul class="treeview-menu active">
                     <router-link tag="li" to="/collections/timeline">
                         <a>Timeline</a>
                     </router-link>

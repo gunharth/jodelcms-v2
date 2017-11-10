@@ -13,6 +13,7 @@
         name: 'Jobs',
         data() {
             return {
+                active: false,
                 title: 'All Jobs',
                 source: '/api/jobs',
                 create: '/customer/create',
@@ -30,7 +31,7 @@
                 ],
                 filter: [
                     'id', 'client'
-                ]
+                ],
             }
         },
         components: {

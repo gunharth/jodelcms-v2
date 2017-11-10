@@ -6,7 +6,8 @@
 	export default {
       	data() {
       		return {
-	      		message: 'All good'
+	      		message: 'All good',
+	      		// activeNav: 'test'
 	      	}
       	},
       	created() {
@@ -18,6 +19,11 @@
 			bus.$on('setSaveStatusClean', function() {
 				vm.message = 'All good'
 			})
+
+			// bus.$on('activeNav', function(activeNav) {
+			// 	console.log('called');
+			// 	vm.activeNav = activeNav;
+			// })
       	}
     }
 </script>

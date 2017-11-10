@@ -65,6 +65,8 @@
         .sidebar-menu>li.menu-open span {
             font-weight: bold;
         }
+
+        .treeview-menu.active { display: block; }
     </style>
 </head>
 <body class="hold-transition skin-blue-light sidebar-mini">
@@ -98,9 +100,13 @@
         <section class="content container-fluid">
                 <div class="row">
                     <div class="col-md-12">
+                        <keep-alive>
                         <transition name="fade" mode="out-in">
+
                                 <router-view></router-view>
+
                         </transition>
+                        </keep-alive>
                     </div>
                 </div>
         </section>
