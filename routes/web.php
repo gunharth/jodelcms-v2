@@ -76,14 +76,16 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::get('backend/projects', 'BackendController@projectsindex');
 
     //Route::get('api', 'JobsController@index');
+
+    //Route::get('api', 'JobsController@index');
+    Route::get('api/collections/timeline', 'TimelineEntryController@index');
+    Route::get('api/collections/timeline/{timelineEntry}/edit', 'TimelineEntryController@edit');
+    Route::put('api/collections/timeline/{timelineEntry}', 'TimelineEntryController@update');
+
     Route::get('api/jobs', 'JobsController@index');
     Route::get('api/jobs/{id}/edit', 'JobsController@edit');
     Route::post('api/jobs/{id}', 'JobsController@update');
 
-    //Route::get('api', 'JobsController@index');
-    Route::get('api/timeline', 'TimelineEntryController@index');
-    Route::get('api/timeline/{id}/edit', 'TimelineEntryController@edit');
-    Route::post('api/timeline/{id}', 'TimelineEntryController@update');
 
     // Route::get('api/items', 'ItemsController@index');
     // Route::get('api/products', 'ProductsController@index');

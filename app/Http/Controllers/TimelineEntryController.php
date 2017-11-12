@@ -58,10 +58,9 @@ class TimelineEntryController extends Controller
      */
     public function edit(TimelineEntry $timelineEntry)
     {
-        $item = TimelineEntry::findOrFail($id);
         return response()
             ->json([
-                'form' => $item,
+                'form' => $timelineEntry,
                 'option' => []
             ]);
     }
@@ -75,8 +74,10 @@ class TimelineEntryController extends Controller
      */
     public function update(Request $request, TimelineEntry $timelineEntry)
     {
-        $item = TimelineEntry::findOrFail($id);
-        $item->update($request->all());
+        //$item = TimelineEntry::findOrFail($id);
+        // $timelineEntry->update($request->all());
+        $timelineEntry->update($request->only($timelineEntry->fillable));
+
         return response()
             ->json([
                 'saved' => true

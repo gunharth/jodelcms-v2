@@ -4,11 +4,11 @@
             <span class="panel-title">{{title}}</span>
             <div>
                 <router-link :to="create" class="btn btn-primary btn-sm">Create</router-link>
-                <button class="btn btn-default btn-sm" @click="showFilter = !showFilter">F</button>
+                <button class="btn btn-default btn-sm" @click="params.showFilter = !params.showFilter">F</button>
             </div>
         </div>
         <div class="panel-body">
-            <div class="filter" v-if="showFilter">
+            <div class="filter" v-if="params.showFilter">
                 <div class="filter-column">
                     <select class="form-control" v-model="params.search_column">
                         <option v-for="column in filter" :value="column">{{column}}</option>
@@ -31,7 +31,7 @@
                     <button class="btn btn-primary btn-sm btn-block" @click="fetchData">Filter</button>
                 </div>
             </div>
-            <table class="table table-striped">
+            <table class="table">
                 <thead>
                     <tr>
                         <th v-for="item in thead">
@@ -81,16 +81,16 @@
 <script>
 
     export default {
-        props: ['source', 'thead', 'filter', 'create', 'title'],
+        props: ['source', 'thead', 'filter', 'create', 'title', 'direction', 'showFilter'],
         data() {
             return {
-                showFilter: true,
                 model: {
                     data: []
                 },
                 params: {
+                    showFilter: this.showFilter || false,
                     column: 'id',
-                    direction: 'desc',
+                    direction: this.direction || 'desc',
                     per_page: 10,
                     page: 1,
                     search_column: 'id',
@@ -142,7 +142,7 @@
                     }
                 } else {
                     this.params.column = column
-                    this.params.direction = 'asc'
+                    this.direction = 'asc'
                 }
 
                 this.fetchData()

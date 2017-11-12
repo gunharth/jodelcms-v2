@@ -45,7 +45,7 @@
      <link rel="stylesheet" href="/backend/css/app.css">
     <style>
         body {
-            font-size: 15px;
+            font-size: 16px;
             background: #f7f7f7;
             color: #32325d;
         }
@@ -65,8 +65,19 @@
         .sidebar-menu>li.menu-open span {
             font-weight: bold;
         }
+        .sidebar-menu>li>a {
+            padding: 6px 5px 6px 15px;
+        }
 
         .treeview-menu.active { display: block; }
+
+        .treeview-menu>li>a {
+            padding: 5px 5px 5px 32px;
+        }
+
+        .sidebar-menu>li.header {
+    margin-top: 10px;
+}
     </style>
 </head>
 <body class="hold-transition skin-blue-light sidebar-mini">
@@ -117,14 +128,12 @@
 
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
+<!--   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <i class="fa fa-lg fa-github" aria-hidden="true"></i>
     </div>
-    <!-- Default to the left -->
     <strong>Copyright &copy; @php echo date('Y'); @endphp  <a href="https://gunharth.io">Gunharth Randolf</a>.</strong> All rights reserved.
-  </footer>
+  </footer> -->
 
 </div>
 <!-- ./wrapper -->

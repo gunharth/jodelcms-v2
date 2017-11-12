@@ -12,31 +12,10 @@
                             <input type="text" class="form-control" v-model="form.title">
                             <small class="text-danger" v-if="errors.title">{{errors.title[0]}}</small>
                         </div>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" v-model="form.name">
-                            <small class="text-danger" v-if="errors.name">{{errors.name[0]}}</small>
-                        </div>
+
                     </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="text" class="form-control" v-model="form.email">
-                            <small class="text-danger" v-if="errors.email">{{errors.email[0]}}</small>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="text" class="form-control" v-model="form.phone">
-                            <small class="text-danger" v-if="errors.phone">{{errors.phone[0]}}</small>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label>Address</label>
-                            <textarea class="form-control" v-model="form.address"></textarea>
-                            <small class="text-danger" v-if="errors.address">{{errors.address[0]}}</small>
-                        </div>
-                    </div>
+
+
                 </div>
                 <button class="btn btn-success">Save</button>
             </form>
@@ -55,9 +34,9 @@
                 errors: {},
                 option: {},
                 title: 'Create',
-                initialize: '/api/jobs/create',
+                initialize: '/api/timeline/create',
                 redirect: '/',
-                store: '/api/jobs',
+                store: '/api/timeline',
                 method: 'post',
                 params: {
                     column: 'id',
@@ -72,8 +51,8 @@
         beforeMount() {
             if(this.$route.meta.mode === 'edit') {
                 this.title = 'Edit'
-                this.initialize = '/api/jobs/' + this.$route.params.id + '/edit'
-                this.store = '/api/jobs/' + this.$route.params.id
+                this.initialize = '/api/collections/timeline/' + this.$route.params.id + '/edit'
+                this.store = '/api/collections/timeline/' + this.$route.params.id
                 this.method = 'put'
             }
             this.fetchData()

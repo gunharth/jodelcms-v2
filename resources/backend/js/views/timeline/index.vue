@@ -1,5 +1,5 @@
 <template>
-    <data-viewer :source="source" :thead="thead" :filter="filter" :create="create" :title="title">
+    <data-viewer :source="source" :thead="thead" :filter="filter" :create="create" :title="title" :direction="direction" :showFilter="showFilter">
         <template slot-scope="props">
             <table-row :props="props" :thead="thead"></table-row>
         </template>
@@ -13,14 +13,16 @@
         name: 'Timeline',
         data() {
             return {
-                title: 'All Entries',
-                source: '/api/timeline',
-                create: '/customer/create',
+                title: 'Project Timeline',
+                source: '/api/collections/timeline',
+                create: '/api/collections/timeline/create',
                 thead: [
                     {title: '#', key: 'id', sort: true},
-                    {title: 'Project', key: 'title', sort: true},
+                    {title: 'Title', key: 'title', sort: true},
                     {title: 'Started at', key: 'started_at', sort: true},
                 ],
+                direction: 'asc',
+                showFilter: true,
                 filter: [
                     'id', 'title', 'started_at'
                 ]

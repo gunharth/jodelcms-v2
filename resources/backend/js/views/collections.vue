@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div>{{ title }} </div>
 </template>
 
 <script>
@@ -10,7 +10,7 @@
 		data() {
 			return {
 
-			// 	title: 'Job Items',
+			title: 'Collections',
 			// 	source: '/api/items',
 			// 	create: '',
 			// 	thead: [

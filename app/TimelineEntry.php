@@ -14,6 +14,6 @@ class TimelineEntry extends Model
     ];
 
     protected $filter = [
-        'id'
+        'id', 'title', 'started_at'
     ];
 }

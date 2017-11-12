@@ -6,23 +6,25 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+            <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li class="header">CONTENT</li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Pages</span></a></li>
+            <li><a href="#"><i class="fa fa-bars"></i> <span>Menus</span></a></li>
+            <li><a href="#"><i class="fa fa-file-o"></i> <span>Pages</span></a></li>
             <li class="treemenu">
                 <router-link to="/collections">
-                    <i class="fa fa-link"></i> <span>Collections</span>
+                    <i class="fa fa-files-o"></i> <span>Collections</span>
                 </router-link>
                 <ul class="treeview-menu active">
-                    <router-link tag="li" to="/collections/timeline">
-                        <a>Timeline</a>
-                    </router-link>
-                    <router-link tag="li" to="/jobs" exact>
+                    <li>
+                        <router-link to="/collections/timeline">Timeline</router-link>
+                    </li>
+                    <router-link tag="li" to="/collections/jobs">
                         <a>Jobs</a>
                     </router-link>
                     <li><a href="#">Slider</a></li>
                 </ul>
             </li>
+            <li class="header">SETTINGS</li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>

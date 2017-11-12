@@ -29,6 +29,7 @@
                     // {title: 'Qty Items', key: 'qty_items', sort: true},
                     // {title: 'notes', key: 'notes', sort: true},
                 ],
+                //direction: 'desc',
                 filter: [
                     'id', 'client'
                 ],
