@@ -34,47 +34,49 @@
                 errors: {},
                 option: {},
                 title: 'Create',
-                initialize: '/api/timeline/create',
-                redirect: '/',
-                store: '/api/timeline',
+                initialize: '',
+                redirect: '/collections/timeline',
+                store: '/api/collections/timeline',
                 method: 'post',
-                params: {
-                    column: 'id',
-                    direction: 'desc',
-                },
-                thead: [
-                    {title: 'Job Item #', key: 'id', sort: true},
-                    {title: 'Product', key: 'product_id', sort: true},
-                ]
+                // params: {
+                //     column: 'id',
+                //     direction: 'desc',
+                // },
+                // thead: [
+                //     {title: 'Job Item #', key: 'id', sort: true},
+                //     {title: 'Product', key: 'product_id', sort: true},
+                // ]
             }
         },
         beforeMount() {
             if(this.$route.meta.mode === 'edit') {
                 this.title = 'Edit'
                 this.initialize = '/api/collections/timeline/' + this.$route.params.id + '/edit'
+                this.redirect = '/collections/timeline',
                 this.store = '/api/collections/timeline/' + this.$route.params.id
-                this.method = 'put'
+                this.method = 'put',
+                this.fetchData()
             }
-            this.fetchData()
+
         },
         watch: {
             '$route': 'fetchData'
         },
         methods: {
-            sort(column) {
-                if(column === this.params.column) {
-                    if(this.params.direction === 'desc') {
-                        this.params.direction = 'asc'
-                    } else {
-                        this.params.direction = 'desc'
-                    }
-                } else {
-                    this.params.column = column
-                    this.params.direction = 'asc'
-                }
+            // sort(column) {
+            //     if(column === this.params.column) {
+            //         if(this.params.direction === 'desc') {
+            //             this.params.direction = 'asc'
+            //         } else {
+            //             this.params.direction = 'desc'
+            //         }
+            //     } else {
+            //         this.params.column = column
+            //         this.params.direction = 'asc'
+            //     }
 
-                this.fetchData()
-            },
+            //     this.fetchData()
+            // },
             fetchData() {
                 var vm = this
                 axios.get(this.initialize)
@@ -91,6 +93,9 @@
                 axios[this.method](this.store, this.form)
                     .then(function(response) {
                         if(response.data.saved) {
+                            // if(response.data.id !== undefined) {
+                            //     this.redirect = '/collections/timeline/'+response.data.id+'/edit';
+                            // }
                             vm.$router.push(vm.redirect)
                         }
                     })

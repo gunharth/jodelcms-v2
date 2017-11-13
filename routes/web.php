@@ -78,6 +78,7 @@ Route::group(['middleware' => 'auth'], function () {
     //Route::get('api', 'JobsController@index');
 
     //Route::get('api', 'JobsController@index');
+    Route::post('api/collections/timeline', 'TimelineEntryController@store');
     Route::get('api/collections/timeline', 'TimelineEntryController@index');
     Route::get('api/collections/timeline/{timelineEntry}/edit', 'TimelineEntryController@edit');
     Route::put('api/collections/timeline/{timelineEntry}', 'TimelineEntryController@update');

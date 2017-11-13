@@ -15,13 +15,13 @@
             return {
                 title: 'Project Timeline',
                 source: '/api/collections/timeline',
-                create: '/api/collections/timeline/create',
+                create: '/collections/timeline/create',
                 thead: [
                     {title: '#', key: 'id', sort: true},
                     {title: 'Title', key: 'title', sort: true},
                     {title: 'Started at', key: 'started_at', sort: true},
                 ],
-                direction: 'asc',
+                direction: 'desc',
                 showFilter: true,
                 filter: [
                     'id', 'title', 'started_at'

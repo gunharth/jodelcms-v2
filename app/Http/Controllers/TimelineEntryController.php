@@ -36,7 +36,16 @@ class TimelineEntryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $entry = TimelineEntry::create($request->all());
+
+            // return $page;
+            return response()
+            ->json([
+                'saved' => true,
+                'id' => $entry->id,
+            ]);
+        }
     }
 
     /**
