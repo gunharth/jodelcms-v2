@@ -17,6 +17,16 @@ class MenusController extends Controller
         $this->middleware('auth');
     }
 
+    public function index() {
+        $menus = array();
+        foreach (Config::get('jodel.menus') as $name => $id) {
+            $menus[] = array('id' => $id, 'title' => $name);
+
+        }
+        $menus = array('data' => $menus);
+        return json_encode($menus);
+    }
+
     /**
      * Show the form for creating a new menu.
      *

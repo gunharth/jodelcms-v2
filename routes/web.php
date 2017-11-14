@@ -78,6 +78,8 @@ Route::group(['middleware' => 'auth'], function () {
     //Route::get('api', 'JobsController@index');
 
     //Route::get('api', 'JobsController@index');
+    Route::get('api/menus', 'MenusController@index');
+
     Route::post('api/collections/timeline', 'TimelineEntryController@store');
     Route::get('api/collections/timeline', 'TimelineEntryController@index');
     Route::get('api/collections/timeline/{timelineEntry}/edit', 'TimelineEntryController@edit');
@@ -188,7 +190,7 @@ Route::group(['middleware' => 'auth', 'prefix' => LaravelLocalization::setLocale
     Route::get('menuSelectorType/{type}', function ($type) {
         $model = '\App\\'.$type;
 
-        return $model::orderBy('title')->get();
+        return $model::all();
     });
 
     /*

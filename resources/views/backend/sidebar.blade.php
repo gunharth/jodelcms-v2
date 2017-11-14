@@ -8,7 +8,11 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li class="header">CONTENT</li>
-            <li><a href="#"><i class="fa fa-bars"></i> <span>Menus</span></a></li>
+            <li>
+                <router-link to="/menus">
+                    <i class="fa fa-bars"></i> <span>Menus</span>
+                </router-link>
+            </li>
             <li><a href="#"><i class="fa fa-file-o"></i> <span>Pages</span></a></li>
             <li class="treemenu">
                 <router-link to="/collections">

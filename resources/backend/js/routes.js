@@ -3,8 +3,10 @@ import VueRouter from 'vue-router';
 // let base = '/en/admin/backend/collections/';
 let routes = [
 
-	{ 	path: '/collections', component: require('./views/collections') },
+	{ 	path: '/menus', component: require('./views/menus') },
+	{	path: '/menus/:id/:lang', component: require('./views/menus/index')},
 
+	{ 	path: '/collections', component: require('./views/collections') },
 	{ 	path: '/collections/timeline', component: require('./views/timeline/index') },
 	{	path: '/collections/timeline/create', component: require('./views/timeline/form.vue')},
 	{	path: '/collections/timeline/:id/edit', name: 'timelineEdit', component: require('./views/timeline/form'), meta: {mode: 'edit'}},

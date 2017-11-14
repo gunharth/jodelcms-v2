@@ -11,7 +11,7 @@
 </head>
 <body>
 	<iframe id="editorIFrame" name="editorIFrame" src="{{ $src }}?menu={{ $menu }}" frameborder="0"></iframe>
-	
+
 	<div id="editor-panel-left" style="display: none; position: absolute; right: -53px; z-index: 99999; width: 50px, height: 50px; background: #999">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -32,15 +32,15 @@
 				    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 				    <option value="{{$localeCode}}">{{ strtoupper($localeCode) }}</option>
 				    @endforeach
-	            </select> 
+	            </select>
 				<a class="tb-refresh" href="#" title="Refresh"><i class="fa fa-fw fa-lg fa-refresh"></i></a>
 				<a class="tb-collapse" href="#" title="Toggle"><i class="fa fa-fw fa-lg fa-caret-up"></i></a>
 				<a class="tb-collapse-right" href="#" title="Toggle"><i class="fa fa-fw fa-lg fa-caret-right"></i></a>
 				<a class="tb-toggle" href="#" title="Pin"><i class="fa fa-fw fa-lg fa-lock"></i></a>
 				<!-- <a href="/logout" title="Sign out"><i class="fa fa-lg fa-sign-out"></i></a> -->
-				 
+
 			</div>
-	        
+
 	      </div>
 	      <div id="modal-toggle">
 	      <div class="modal-body">
@@ -61,7 +61,7 @@
 				             <div class="list">
 								<ul style="padding:0"></ul>
 							</div>
-				        </div> 
+				        </div>
 			        </div>
 				</div>
 				<div id="tab-pages" class="tab">
@@ -71,9 +71,9 @@
 					<div class="tab-content">
 						<div class="dd">
 				            <ol class="dd-list" id="pageItems">
-				            	
+
 				            </ol>
-				        </div> 
+				        </div>
 			        </div>
 				</div>
 				<div id="tab-menus" class="tab">
@@ -112,7 +112,7 @@
 				             Image Slider <br>
 				             Directors <br>
 				             Spots <br>
-				        </div> 
+				        </div>
 			        </div>
 				</div>
 	            <div id="tab-settings" class="tab">
@@ -149,7 +149,7 @@
 				             Global Code (GA, Google webmaster tools, Bing webmaster tools, keep open to enter scripts like page specific codes) <br>
 				             Need for Recycle bin ? <br>
 				             offer external seo tools <br>
-				        </div> 
+				        </div>
 			        </div>
 	            </div>
 			</div><!-- tabs end -->
@@ -157,14 +157,14 @@
 				<div id="save-outer" class="col-sm-10">
 					<button class="btn btn-success">
 						<i class="fa fa-fw fa-exclamation-circle"></i> Save
-					</button> 
+					</button>
 					or hit CMD/CTRL S to save!
 				</div>
 				<div class="col-sm-2 pull-right text-right">
 					<a href="{{ url('/logout') }}"
 	                    onclick="event.preventDefault();
-	                    document.getElementById('logout-form').submit();" 
-	                    data-toggle="tooltip" 
+	                    document.getElementById('logout-form').submit();"
+	                    data-toggle="tooltip"
 	                    title="Logout">
 	                    <i class="fa fa-lg fa-sign-out text-warning"></i>
 	                </a>
@@ -182,7 +182,7 @@
 	<script src="/js/editor/editor.js"></script>
 	<script src='/js/jquery-ui.js'></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-	<script src="/packages/nestable-fork/src/jquery.nestable.js"></script>
+	<script src="/js/packages/nestable-fork/src/jquery.nestable.js"></script>
 	<script src="/js/editor.js"></script>
 	<script src="/js/elements.js"></script>
 	<script src="/js/elements/text.js"></script>
