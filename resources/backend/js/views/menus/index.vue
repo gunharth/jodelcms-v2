@@ -1,9 +1,17 @@
 <template>
-    <div class="dd nestable">
-                            <ol class="dd-list" id="menuItems" v-html="rawHtml">
-
-                            </ol>
-                        </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="panel-title">{{title}}</span>
+            <div>
+                <router-link :to="create" class="btn btn-primary btn-sm">Create</router-link>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="dd nestable">
+                <ol class="dd-list" id="menuItems" v-html="rawHtml"></ol>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
     //import DataViewer from '../../components/DataViewer'
@@ -13,7 +21,9 @@
         name: 'Menu',
         data() {
             return {
-                rawHtml: ``
+                title: 'Menu',
+                rawHtml: ``,
+                create: 'makeneewmenu'
             }
         },
         mounted: function() {
@@ -57,7 +67,7 @@
                     data: ele.nestable('asNestedSet'),
                   })
                   .then(function (response) {
-                    console.log(response);
+                    console.log('updated');
                   })
                   .catch(function (error) {
                     console.log(error);

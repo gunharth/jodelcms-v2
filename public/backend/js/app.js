@@ -46265,6 +46265,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 //import DataViewer from '../../components/DataViewer'
 //import TableRow from './TableRow'
@@ -46273,7 +46281,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     name: 'Menu',
     data: function data() {
         return {
-            rawHtml: ''
+            title: 'Menu',
+            rawHtml: '',
+            create: 'makeneewmenu'
         };
     },
 
@@ -46317,7 +46327,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 method: 'post',
                 data: ele.nestable('asNestedSet')
             }).then(function (response) {
-                console.log(response);
+                console.log('updated');
             }).catch(function (error) {
                 console.log(error);
             });
@@ -46350,12 +46360,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dd nestable" }, [
-    _c("ol", {
-      staticClass: "dd-list",
-      attrs: { id: "menuItems" },
-      domProps: { innerHTML: _vm._s(_vm.rawHtml) }
-    })
+  return _c("div", { staticClass: "panel panel-default" }, [
+    _c("div", { staticClass: "panel-heading" }, [
+      _c("span", { staticClass: "panel-title" }, [_vm._v(_vm._s(_vm.title))]),
+      _vm._v(" "),
+      _c(
+        "div",
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "btn btn-primary btn-sm",
+              attrs: { to: _vm.create }
+            },
+            [_vm._v("Create")]
+          )
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "panel-body" }, [
+      _c("div", { staticClass: "dd nestable" }, [
+        _c("ol", {
+          staticClass: "dd-list",
+          attrs: { id: "menuItems" },
+          domProps: { innerHTML: _vm._s(_vm.rawHtml) }
+        })
+      ])
+    ])
   ])
 }
 var staticRenderFns = []

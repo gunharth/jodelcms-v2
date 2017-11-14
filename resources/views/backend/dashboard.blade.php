@@ -327,6 +327,10 @@
     background: #ddd;
 }
 
+.dd-expand {
+    dispay: none;
+}
+
 
     </style>
 </head>
