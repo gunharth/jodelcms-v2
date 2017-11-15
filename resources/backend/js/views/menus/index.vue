@@ -15,10 +15,10 @@
     import NestedList from './NestedList'
 
     export default {
-        name: 'Menu',
+        name: 'Menus',
         data() {
             return {
-                title: 'Menu',
+                title: 'Menus',
                 create: 'makeneewmenu'
             }
         },

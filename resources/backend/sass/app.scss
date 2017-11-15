@@ -1,3 +1,47 @@
+$font-size-base: 16px;
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/nestable-fork/src/jquery.nestable";
+
+/* boostrap override */
+body {
+    background: #f7f7f7;
+    color: #32325d;
+}
+
+/* AdminLTE override */
+.content-wrapper {
+    background-color: transparent;
+}
+
+.sidebar-menu>li.header {
+    margin-top: 10px;
+}
+
+.sidebar-menu>li.menu-open span {
+    font-weight: bold;
+}
+.sidebar-menu>li>a {
+    padding: 6px 5px 6px 15px;
+}
+
+.treeview-menu.active { display: block; }
+
+.treeview-menu>li>a {
+    padding: 5px 5px 5px 32px;
+}
+
+/* vue router */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0
+}
+.router-link-active { font-weight: bold; }
+
+
+
+/* DataFilter */
 .panel-heading {
     display: flex;
     justify-content: space-between;
@@ -35,3 +79,137 @@
 .pagination-input {
     width: 45px;
 }
+
+
+/* nestable-fork override */
+
+// .dd-placeholder {
+//     margin-top: 5px;
+// }
+.dd-list .dd-empty, .dd-list .dd-item, .dd-list .dd-placeholder {
+    font-size: 16px;
+    // line-height: 22px;
+}
+
+.dd-list li {
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+.dd-list .dd-handle {
+    position: absolute;
+    display: block;
+    height: 33px;
+    margin: 0;
+    padding: 0 6px;
+    left: 0;
+    top: 0;
+    cursor: move;
+    width: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 1px solid #aaa;
+    background: #ddd;
+    background: -webkit-linear-gradient(top, #ddd 0%, #bbb 100%);
+    background: -moz-linear-gradient(top, #ddd 0%, #bbb 100%);
+    background: linear-gradient(top, #ddd 0%, #bbb 100%);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dd-list .dd-item > button {
+    height: 24px !important;
+    font-size: 16px;
+    margin-left: 30px;
+}
+
+.dd-list li div, .dd-content {
+    // display: block;
+    cursor: pointer;
+    padding-left: 40px;
+    // height: 31px;
+    // margin: 5px 0;
+    // padding: 8px 10px 5px 40px;
+    // color: #333;
+    // text-decoration: none;
+    // border: 1px solid #ccc;
+    // background: #fafafa;
+    // background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
+    // background: -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
+    // background: linear-gradient(top, #fafafa 0%, #eee 100%);
+    // -webkit-border-radius: 3px;
+    // border-radius: 3px;
+    // box-sizing: border-box;
+    // -moz-box-sizing: border-box;
+}
+
+// .dd-list .dd-empty, .dd-list .dd-item, .dd-list .dd-placeholder {
+//     display: block;
+//     font-size: 16px;
+//     line-height: 22px;
+// }
+
+// .dd-content {
+//     display: block;
+//     // height: 31px;
+//     margin: 5px 0;
+//     padding: 8px 10px 5px 40px;
+//     color: #333;
+//     text-decoration: none;
+//     border: 1px solid #ccc;
+//     background: #fafafa;
+//     background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
+//     background: -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
+//     background: linear-gradient(top, #fafafa 0%, #eee 100%);
+//     -webkit-border-radius: 3px;
+//     border-radius: 3px;
+//     box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+// }
+
+// .dd-title {
+//     width: 55%;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     position: relative;
+//     display: inline-block;
+// }
+
+// .dd-content:hover {
+//     color: #2ea8e5;
+//     background: #fff;
+// }
+
+// .dd-dragel > .dd-item > .dd-content {
+//     margin: 0;
+// }
+
+// .dd-item > button {
+//     margin-left: 30px;
+// }
+
+// .dd-list .dd-handle {
+//     position: absolute;
+//     display: block;
+//     height: 41px;
+//     margin: 0;
+//     padding: 9px 6px;
+//     left: 0;
+//     top: 0;
+//     cursor: pointer;
+//     width: 30px;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     border: 1px solid #aaa;
+//     background: #ddd;
+//     background: -webkit-linear-gradient(top, #ddd 0%, #bbb 100%);
+//     background: -moz-linear-gradient(top, #ddd 0%, #bbb 100%);
+//     background: linear-gradient(top, #ddd 0%, #bbb 100%);
+//     border-top-right-radius: 0;
+//     border-bottom-right-radius: 0;
+// }
+
+// .dd-handle:hover {
+//     background: #ddd;
+// }

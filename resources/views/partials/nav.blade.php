@@ -11,7 +11,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                @foreach($menu->toHierarchy() as $node)
+                @foreach($menu->toSortedHierarchy() as $node)
                     {!! renderMainMenu($node, $path) !!}
                 @endforeach
             </ul>
