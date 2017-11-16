@@ -1,22 +1,13 @@
 <template>
     <div class="dd">
-
-            <component :is="transformed" v-bind="$props" /></component>
-
+        <ol class="dd-list" v-html="rawHtml"></ol>
     </div>
 </template>
 <script>
     export default {
-        props: {
-    text: {
-      type: String,
-      default: ''
-    }
-  },
         data() {
             return {
                 rawHtml: ``,
-                textString: 'dslfksjlf',
             }
         },
         mounted: function() {
@@ -48,22 +39,7 @@
                     console.log(error);
                   });
             });
-        },
-        computed: {
-  transformed() {
-    //alert(JSON.stringify(this.$options.props.text));
-    // alert(this.rawHtml)
-    return {
-      props: ['textString'],
-      // data: {
-      //   text: 'dsfsf'
-      // },
-      template: `<ol class="dd-list">{{ textString }}s</ol>`,
-      //props: this.$options.props
-    }
-  }
-}
-
+        }
 
     }
 </script>

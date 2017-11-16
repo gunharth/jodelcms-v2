@@ -1,13 +1,20 @@
 <template>
     <div class="dd">
-        <ol class="dd-list" v-html="rawHtml"></ol>
+        <component :is="transformed" :textString="textString" /></component>
     </div>
 </template>
 <script>
     export default {
+        props: {
+          textString: {
+            type: String,
+            default: 'hallo'
+          }
+      },
         data() {
             return {
-                rawHtml: ``,
+                rawHtml: `sss`,
+                // this.textString: 'dslfksjlf',
             }
         },
         mounted: function() {
@@ -15,6 +22,7 @@
                 .get('/admin/menu/listMenus/1/en')
                 .then((response) => {
                     this.rawHtml  = `${response.data}`;
+                    // this.rawHtml = response.data;
                     })
                 .catch((error) => {
                     console.log('error');
@@ -39,7 +47,25 @@
                     console.log(error);
                   });
             });
-        }
+        },
+//         computed: {
+//   transformed() {
+//     //alert(JSON.stringify(this.$options.props.text));
+//     let text = `${this.rawHtml}`;
+//     return {
+//       // props: ['textString'],
+//       data() {
+//             return {
+//                 textString: text
+//                 // this.textString: 'dslfksjlf',
+//             }
+//         },
+//       template: `<ol class="dd-list">{{ textString }}</ol>`,
+//       //props: this.$options.props
+//     }
+//   }
+// }
+
 
     }
 </script>

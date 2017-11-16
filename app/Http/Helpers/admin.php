@@ -36,7 +36,7 @@ if (! function_exists('renderEditorMenus')) {
                     '</button>'.
                     '<button type="button" class="btn btn-link btn-xs edit" title="settings">'.
                         '<i class="fa fa-gear"></i>'.
-                    '</button>';
+                    '</button><a href="/en/admin/backend#/menus/1/en/1/edit">edit</a>';
 
         if (config('app.fallback_locale') == $editorLocale) {
             $actions .=
