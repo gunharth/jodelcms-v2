@@ -79,6 +79,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Route::get('api', 'JobsController@index');
     Route::get('api/menus', 'MenusController@index');
+    Route::get('api/menu/{id}/edit', 'MenusController@edit');
 
     Route::post('api/collections/timeline', 'TimelineEntryController@store');
     Route::get('api/collections/timeline', 'TimelineEntryController@index');

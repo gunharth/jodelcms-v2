@@ -66,9 +66,27 @@ class MenusController extends Controller
     {
         App::setLocale($editorLocale);
         $menu = Menu::findOrFail($id);
-        $pages = Page::pluck('title', 'id')->toArray();
+        // $pages = Page::pluck('title', 'id')->toArray();
 
-        return view('admin.menu.edit', compact('menu', 'pages'));
+        return view('admin.menu.edit', compact('menu'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Menu  $menu
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id, $editorLocale='en')
+    {
+        App::setLocale($editorLocale);
+        $menu = Menu::findOrFail($id);
+        $menu['pages'] = Page::all();
+        return response()
+            ->json([
+                'form' => $menu,
+                'option' => []
+            ]);
     }
 
     /**

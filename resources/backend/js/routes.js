@@ -5,6 +5,7 @@ let routes = [
 
 	{ 	path: '/menus', component: require('./views/menus') },
 	{	path: '/menus/:id/:lang', component: require('./views/menus/index')},
+	{	path: '/menus/:id/:lang/:itemid/edit', component: require('./views/menus/form'), meta: {mode: 'edit'}},
 
 	{ 	path: '/collections', component: require('./views/collections') },
 	{ 	path: '/collections/timeline', component: require('./views/timeline/index') },
