@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CollectionSeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(JobSeeder::class);
+        $this->call(TimelineSeeder::class);
 
         //$this->call(MenuSeeder::class);
 
